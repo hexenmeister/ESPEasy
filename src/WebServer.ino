@@ -4,6 +4,8 @@
 
 #define HTML_SYMBOL_WARNING "&#9888;"
 
+#define TASKS_PER_PAGE 12 // AS
+
 static const char pgDefaultCSS[] PROGMEM = {
   //color sheme: #07D #D50 #DB0 #A0D
   "* {font-family:sans-serif; font-size:12pt;}"
@@ -1396,7 +1398,7 @@ void handle_devices() {
       reply += page;
     reply += F("\">&lt;</a>");
     reply += F("<a class='button link' href=\"devices?setpage=");
-    if (page < (TASKS_MAX / 4))
+    if (page < (TASKS_MAX / TASKS_PER_PAGE))
       reply += page + 1;
     else
       reply += page;
@@ -1406,7 +1408,7 @@ void handle_devices() {
 
     String deviceName;
 
-    for (byte x = (page - 1) * 4; x < ((page) * 4); x++)
+    for (byte x = (page - 1) * TASKS_PER_PAGE; x < ((page) * TASKS_PER_PAGE); x++)
     {
       reply += F("<TR><TD>");
       reply += F("<a class='button link' href=\"devices?index=");
