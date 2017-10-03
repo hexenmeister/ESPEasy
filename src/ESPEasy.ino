@@ -220,7 +220,7 @@
 #else
   #define DEVICES_MAX                      64
 #endif
-#define TASKS_MAX                          12 // max 12!
+#define TASKS_MAX                          24 // max 12!
 #define CONTROLLER_MAX                      3 // max 4!
 #define NOTIFICATION_MAX                    3 // max 4!
 #define VARS_PER_TASK                       4
